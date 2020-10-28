@@ -24,7 +24,7 @@ async def on_message(message):
 
 @client.event
 async def on_message(message):
-    if str(message.channel.id) == "771091645949149253" and message.attachments <= 1:
+    if str(message.channel.id) == "771091645949149253" and not message.attachments:
         await message.channel.purge(limit=1)
     await client.process_commands(message)
 
