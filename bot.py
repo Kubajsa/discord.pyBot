@@ -33,9 +33,19 @@ async def on_message(message):
 @client.command()
 async def about(ctx):
     embed = discord.Embed(title="Kubajsa's Bot", description="Here is some info about this bot:", color=discord.Color.dark_green())
-    embed.add_field(name="Author", value="Coded by Kubajsa in Python", inline= True)
+    embed.add_field(name="Author", value="Coded by Kubajsa in Python with <3", inline= True)
     embed.add_field(name="Current commands", value=".about; .hello; .ping", inline=True)
     embed.set_thumbnail(url= client.user.avatar_url)
+    embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
+    await ctx.send(embed=embed)
+
+
+@client.command(aliases=['user'])
+async def whois(ctx, member : discord.Member):
+    embed = discord.Embed(title= member.display_name, description= member.mention, color= discord.Color.blue())
+    embed.add_field(name="ID", value= member.id, inline= True)
+    embed.add_field(name="Highest role", value= member.top_role.mention, inline= True)
+    embed.set_thumbnail(url=member.avatar_url)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
     await ctx.send(embed=embed)
 
