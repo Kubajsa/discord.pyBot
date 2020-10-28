@@ -7,6 +7,7 @@ client = commands.Bot(command_prefix=".")
 
 @client.event
 async def on_ready():
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(".about"))
     print("Bot is ready.")
 
 
@@ -27,6 +28,16 @@ async def on_message(message):
     if str(message.channel.id) == "771091645949149253" and not message.attachments:
         await message.channel.purge(limit=1)
     await client.process_commands(message)
+
+
+@client.command()
+async def about(ctx):
+    embed = discord.Embed(title="Kubajsa's Bot", description="Here is some info about this bot:", color=discord.Color.dark_green())
+    embed.add_field(name="Author", value="Coded by Kubajsa in Python", inline= True)
+    embed.add_field(name="Current commands", value=".about; .hello; .ping", inline=True)
+    embed.set_thumbnail(url= client.user.avatar_url)
+    embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
+    await ctx.send(embed=embed)
 
 
 @client.command()
