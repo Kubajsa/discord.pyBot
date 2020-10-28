@@ -22,6 +22,13 @@ async def on_message(message):
     await client.process_commands(message)
 
 
+@client.event
+async def on_message(message):
+    if str(message.channel.id) == "771091645949149253" and message.content != "":
+        await message.channel.purge(limit=1)
+    await client.process_commands(message)
+
+
 @client.command()
 async def hello(ctx):
     await ctx.channel.send("Hello " + str(ctx.author) + "!")
