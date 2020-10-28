@@ -17,7 +17,8 @@ async def on_message(message):
         no = discord.utils.get(message.guild.emojis, name='no')
         await message.add_reaction(yes)
         await message.add_reaction(no)
-        print("Added a poll reaction")
+        msgtext = message.content
+        print("Added a poll reaction to message: " + msgtext)
     await client.process_commands(message)
 
 
@@ -29,5 +30,4 @@ async def hello(ctx):
 @client.command()
 async def ping(ctx):
     await ctx.channel.send(f'Pong! {round(client.latency * 1000)}ms')
-
 client.run(os.environ['token'])
