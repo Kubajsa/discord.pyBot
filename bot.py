@@ -61,7 +61,7 @@ async def trade(ctx, kitwant, kithave):
     await ctx.channel.purge(limit=1)
     embed = discord.Embed(title="New trade!", description=f"Trade by: {ctx.author.mention}", color=discord.Color.orange())
     embed.set_thumbnail(url=ctx.author.avatar_url)
-    embed.add_field(name="Trade:", value=f"{ctx.author.mention} wants to trade {kithave} for {kitwant}")
+    embed.add_field(name="Trade:", value=f"{ctx.author.mention} wants {kithave} for {kitwant}")
     await ctx.send(embed=embed)
 
 
