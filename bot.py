@@ -57,7 +57,7 @@ async def ping(ctx):
 
 
 @client.command()
-async def trade(ctx, kitwant, kithave)
+async def trade(ctx, kitwant, kithave):
     embed = discord.Embed(title="New trade!", description=f"Trade by: {ctx.author.mention}", color=discord.Color.orange())
     embed.set_thumbnail(url=ctx.author.avatar_url)
     embed.add_field(name="Trade:", value=f"{ctx.author.mention} wants to trade {kithave} for {kitwant}")
