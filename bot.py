@@ -13,7 +13,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    print("Debug")
+    print("Debug.")
     if str(message.channel.id) == "765885590918266920" or str(message.channel.id) == "765885184238288897":
         yes = discord.utils.get(message.guild.emojis, name='yes')
         no = discord.utils.get(message.guild.emojis, name='no')
