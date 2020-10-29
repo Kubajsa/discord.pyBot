@@ -20,10 +20,8 @@ async def on_message(message):
         await message.add_reaction(no)
         msgtext = message.content
         print("Added a poll reaction to message: " + msgtext)
-    else:
-        if str(message.channel.id) == "771091645949149253" and not message.attachments:
-            await message.channel.purge(limit=1)
-        await client.process_commands(message)
+    elif str(message.channel.id) == "771091645949149253" and not message.attachments:
+        await message.channel.purge(limit=1)
     await client.process_commands(message)
 
 
