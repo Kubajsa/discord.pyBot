@@ -57,7 +57,7 @@ async def ping(ctx):
 
 
 @client.command()
-async def trade(ctx, kitwant, kithave):
+async def trade(ctx, kithave, kitwant):
     await ctx.channel.purge(limit=1)
     embed = discord.Embed(title="New trade!", description=f"Trade by: {ctx.author.mention}", color=discord.Color.orange())
     embed.set_thumbnail(url=ctx.author.avatar_url)
