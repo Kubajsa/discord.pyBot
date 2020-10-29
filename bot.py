@@ -29,7 +29,7 @@ async def on_message(message):
 async def about(ctx):
     embed = discord.Embed(title="Kubajsa's Bot", description="Here is some info about this bot:", color=discord.Color.dark_green())
     embed.add_field(name="Author", value="Coded by Kubajsa in Python with <3", inline= True)
-    embed.add_field(name="Current commands", value=".about .hello .ping .whois", inline=True)
+    embed.add_field(name="Current commands", value=".about .hello .ping .whois .trade [kit you want] [kit you have]", inline=True)
     embed.add_field(name="Current events", value="Automatically adds yes and no reactions in polls and suggestions. Deletes messages without images in 6b6t-screentshots", inline=False)
     embed.set_thumbnail(url= client.user.avatar_url)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
@@ -58,6 +58,7 @@ async def ping(ctx):
 
 @client.command()
 async def trade(ctx, kitwant, kithave):
+    await ctx.channel.purge(limit=1)
     embed = discord.Embed(title="New trade!", description=f"Trade by: {ctx.author.mention}", color=discord.Color.orange())
     embed.set_thumbnail(url=ctx.author.avatar_url)
     embed.add_field(name="Trade:", value=f"{ctx.author.mention} wants to trade {kithave} for {kitwant}")
