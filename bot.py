@@ -56,4 +56,11 @@ async def ping(ctx):
     await ctx.channel.send(f'Pong! {round(client.latency * 1000)}ms')
 
 
+@client.command()
+async def trade(ctx, kitwant, kithave)
+    embed = discord.Embed(title="New trade!", description=f"Trade by: {ctx.author.mention}", color=discord.Color.orange())
+    embed.set_thumbnail(url=ctx.author.avatar_url)
+    embed.add_field(name="Trade:", value=f"{ctx.author.mention} wants to trade {kithave} for {kitwant}")
+
+
 client.run(os.environ['token'])
