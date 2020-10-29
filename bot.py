@@ -58,4 +58,6 @@ async def hello(ctx):
 @client.command()
 async def ping(ctx):
     await ctx.channel.send(f'Pong! {round(client.latency * 1000)}ms')
+
+
 client.run(os.environ['token'])
