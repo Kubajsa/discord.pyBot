@@ -46,7 +46,7 @@ async def commands(ctx):
     embed.add_field(name=".whois (@Kubajsa)", value="Shows you some info about the user you mention", inline=False)
     embed.add_field(name=".about Kit_you_want Kit_you_have", value="Makes a trade message", inline=False)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
-    ctx.send(embed=embed)
+    await ctx.send(embed=embed)
 
 
 @client.command(aliases=['user'])
