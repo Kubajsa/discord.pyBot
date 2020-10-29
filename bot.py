@@ -23,6 +23,8 @@ async def on_message(message):
     await client.process_commands(message)
 
 
+a = 1 + 1
+
 @client.event
 async def on_message(message):
     if str(message.channel.id) == "771091645949149253" and not message.attachments:
