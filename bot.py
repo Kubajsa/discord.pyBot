@@ -39,12 +39,12 @@ async def about(ctx):
 @client.command()
 async def commands(ctx):
     embed = discord.Embed(title="Commands", description="Commands and usages:", color=discord.Color.blue())
-    embed.add_field(".about", value="Shows you some info about the bot", inline=False)
-    embed.add_field(".commands", value="Shows this message", inline=False)
-    embed.add_field(".hello", value="Says hello to you", inline=False)
-    embed.add_field(".ping", value="Checks the bot's ping", inline=False)
-    embed.add_field(".whois (@Kubajsa)", value="Shows you some info about the user you mention", inline=False)
-    embed.add_field(".about Kit_you_want Kit_you_have", value="Makes a trade message", inline=False)
+    embed.add_field(name=".about", value="Shows you some info about the bot", inline=False)
+    embed.add_field(name=".commands", value="Shows this message", inline=False)
+    embed.add_field(name=".hello", value="Says hello to you", inline=False)
+    embed.add_field(name=".ping", value="Checks the bot's ping", inline=False)
+    embed.add_field(name=".whois (@Kubajsa)", value="Shows you some info about the user you mention", inline=False)
+    embed.add_field(name=".about Kit_you_want Kit_you_have", value="Makes a trade message", inline=False)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
     ctx.send(embed=embed)
 
