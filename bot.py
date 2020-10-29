@@ -29,7 +29,7 @@ async def on_message(message):
 async def about(ctx):
     embed = discord.Embed(title="Kubajsa's Bot", description="Here is some info about this bot:", color=discord.Color.dark_green())
     embed.add_field(name="Author", value="Coded by Kubajsa in Python with <3", inline= True)
-    embed.add_field(name="Current commands", value=".help .about .hello .ping .whois .trade [kit you have] [kit you want]", inline=True)
+    embed.add_field(name="Current commands", value=".commands .about .hello .ping .whois .trade [kit you have] [kit you want]", inline=True)
     embed.add_field(name="Current events", value="Automatically adds yes and no reactions in polls and suggestions. Deletes messages without images in 6b6t-screentshots", inline=False)
     embed.set_thumbnail(url= client.user.avatar_url)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
@@ -46,6 +46,7 @@ async def commands(ctx):
     embed.add_field(".whois (@Kubajsa)", value="Shows you some info about the user you mention", inline=False)
     embed.add_field(".about Kit_you_want Kit_you_have", value="Makes a trade message", inline=False)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
+    ctx.send(embed=embed)
 
 
 @client.command(aliases=['user'])
