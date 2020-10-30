@@ -13,7 +13,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if str(message.channel.id) == "765885590918266920" or str(message.channel.id) == "765885184238288897":
+    if str(message.channel.id) == "765885590918266920" or str(message.channel.id) == "765885184238288897" or str(message.channel.name) == "✅❌polls" or str(message.channel.name) == "❓suggestions":
         yes = discord.utils.get(message.guild.emojis, name='yes')
         no = discord.utils.get(message.guild.emojis, name='no')
         await message.add_reaction(yes)
