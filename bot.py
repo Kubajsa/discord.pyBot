@@ -29,7 +29,7 @@ async def on_message(message):
 async def about(ctx):
     embed = discord.Embed(title="Kubajsa's Bot", description="Here is some info about this bot:", color=discord.Color.dark_green())
     embed.add_field(name="Author", value="Coded by Kubajsa in Python with <3", inline= True)
-    embed.add_field(name="Current commands", value=".commands .about .hello .ping .whois .trade [kit you have] [kit you want]", inline=True)
+    embed.add_field(name="Current commands", value=".commands .about .hello .ping .whois .trade [kit you want] [kit you have]", inline=True)
     embed.add_field(name="Current events", value="Automatically adds yes and no reactions in polls and suggestions. Deletes messages without images in 6b6t-screentshots", inline=False)
     embed.set_thumbnail(url= client.user.avatar_url)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
@@ -44,7 +44,7 @@ async def commands(ctx):
     embed.add_field(name=".hello", value="Says hello to you", inline=False)
     embed.add_field(name=".ping", value="Checks the bot's ping", inline=False)
     embed.add_field(name=".whois @Kubajsa", value="Shows you some info about the user you mention", inline=False)
-    embed.add_field(name=".about kit_you_want kit_you_have", value="Makes a trade message", inline=False)
+    embed.add_field(name=".trade kit_you_want kit_you_have", value="Makes a trade message", inline=False)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
     await ctx.send(embed=embed)
 
