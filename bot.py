@@ -30,7 +30,7 @@ async def about(ctx):
     embed = discord.Embed(title="Kubajsa's Bot", description="Here is some info about this bot:", color=discord.Color.dark_green())
     embed.add_field(name="Author", value="Coded by Kubajsa in Python with <3", inline= True)
     embed.add_field(name="Current commands", value=".commands .about .hello .ping .whois .trade [kit you want] [kit you have]", inline=True)
-    embed.add_field(name="Current events", value="Automatically adds yes and no reactions in polls and suggestions. Deletes messages without images in 6b6t-screentshots", inline=False)
+    embed.add_field(name="Current events", value="Automatically adds yes and no reactions in polls and suggestions. Deletes messages without images in 6b6t-screentshots. Events so far work only in http://discord.gg/m33xSJX", inline=False)
     embed.set_thumbnail(url= client.user.avatar_url)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
     await ctx.send(embed=embed)
