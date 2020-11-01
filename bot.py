@@ -28,7 +28,7 @@ async def on_message(message):
 @client.command()
 async def about(ctx):
     embed = discord.Embed(title="Kubajsa's Bot", description="Here is some info about this bot:", color=discord.Color.dark_green())
-    embed.add_field(name="Author", value="Coded by Kubajsa in Python with <3", inline= True)
+    embed.add_field(name="About", value="Coded by Kubajsa in Python with <3. The GitHub repo for the bot is https://github.com/Kubajsa/discord.pyBot", inline= True)
     embed.add_field(name="Current commands", value=".commands .about .hello .ping .whois .trade [kit you want] [kit you have]", inline=True)
     embed.add_field(name="Current events", value="Automatically adds yes and no reactions in polls and suggestions. Deletes messages without images in 6b6t-screentshots. Events so far work only in http://discord.gg/m33xSJX", inline=False)
     embed.set_thumbnail(url= client.user.avatar_url)
