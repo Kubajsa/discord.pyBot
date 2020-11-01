@@ -62,6 +62,20 @@ async def whois(ctx, member : discord.Member):
 
 
 @client.command()
+async def server(ctx):
+    embed = discord.Embed(title="Server Information", color=discord.Color.blue())
+    embed.set_thumbnail(url=ctx.guild.icon_url)
+    embed.add_field(name="🌇Server name:", value=ctx.guild.name, inline=False)
+    embed.add_field(name="🗺️Region:", value=ctx.guild.region, inline=False)
+    embed.add_field(name="👑Owner:", value=ctx.guild.owner.mention, inline=False)
+    embed.add_field(name="😂Emojis:", value=str(len(ctx.guild.emojis)), inline=False)
+    embed.add_field(name="💯Role Count:", value=str(len(ctx.guild.roles)), inline=False)
+    embed.add_field(name="🧑‍🤝‍🧑Members:", value=str(ctx.guild.member_count), inline=False)
+    embed.add_field(name="💎Server Boosters", value=str(ctx.guild.premium_subscribers), inline=False)
+    await ctx.send(embed=embed)
+
+
+@client.command()
 async def hello(ctx):
     await ctx.channel.send("Hello " + str(ctx.author) + "!")
 
