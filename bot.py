@@ -55,7 +55,7 @@ async def whois(ctx, member : discord.Member):
     embed.add_field(name="ID", value= member.id, inline= True)
     embed.add_field(name="Highest role", value= member.top_role.mention, inline= True)
     embed.add_field(name="Number of roles", value= str(len(member.roles) - 1), inline= True)
-    embed.add_field(name="Joined at", value= str(member.joined_at), inline= False)
+    embed.add_field(name="Joined at", value= member.joined_at.strftime("%d %B, %Y"), inline= False)
     embed.set_thumbnail(url=member.avatar_url)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
     await ctx.send(embed=embed)
