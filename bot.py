@@ -65,13 +65,13 @@ async def whois(ctx, member : discord.Member):
 async def server(ctx):
     embed = discord.Embed(title="Server Information", color=discord.Color.blue())
     embed.set_thumbnail(url=ctx.guild.icon_url)
-    embed.add_field(name="🌇Server name:", value=ctx.guild.name, inline=False)
+    embed.add_field(name="🌇Server namedgsgds:", value=ctx.guild.name, inline=False)
     embed.add_field(name="🗺️Region:", value=str(ctx.guild.region).capitalize(), inline=False)
+    embed.add_field(name="👑Owner:", value=ctx.guild.get_member(ctx.guild.owner_id), inline=False)
     embed.add_field(name="😂Emojis:", value=str(len(ctx.guild.emojis)), inline=False)
     embed.add_field(name="💯Role Count:", value=str(len(ctx.guild.roles)), inline=False)
     embed.add_field(name="🧑‍🤝‍🧑Members:", value=str(ctx.guild.member_count), inline=False)
-    embed.add_field(name="💬Channels:", value=str(len(ctx.guild.channels)), inline=False)
-    embed.add_field(name="🔊Voice Channels:", value=str(len(ctx.guild.voice_channels)), inline=False)
+    embed.add_field(name="💎Server Boosters", value=str(len(ctx.guild.premium_subscribers)), inline=False)
     await ctx.send(embed=embed)
 
 
