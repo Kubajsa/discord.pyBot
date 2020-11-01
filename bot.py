@@ -63,11 +63,12 @@ async def whois(ctx, member : discord.Member):
 
 @client.command()
 async def server(ctx):
+    owner = ctx.guild.owner_id
     embed = discord.Embed(title="Server Information", color=discord.Color.blue())
     embed.set_thumbnail(url=ctx.guild.icon_url)
     embed.add_field(name="🌇Server name:", value=ctx.guild.name, inline=False)
     embed.add_field(name="🗺️Region:", value=str(ctx.guild.region).capitalize(), inline=False)
-    embed.add_field(name="👑Owner:", value=ctx.guild.owner.user.username, inline=False)
+    embed.add_field(name="👑Owner:", value=ctx.guild.get_member(owner), inline=False)
     embed.add_field(name="😂Emojis:", value=str(len(ctx.guild.emojis)), inline=False)
     embed.add_field(name="💯Role Count:", value=str(len(ctx.guild.roles)), inline=False)
     embed.add_field(name="🧑‍🤝‍🧑Members:", value=str(ctx.guild.member_count), inline=False)
