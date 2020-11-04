@@ -9,12 +9,6 @@ client = commands.Bot(command_prefix=".")
 async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game(".about"))
     print("Bot is ready")
-# start
-    if str(client.get_guild(735421354559537212)) == 735421354559537212:
-        role = discord.utils.get(discord.guild, name='Muted')
-        user = client.get_user(353870423206920193)
-        await user.remove_roles(role)
-# end
 
 
 @client.event
