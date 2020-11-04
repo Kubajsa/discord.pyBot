@@ -1,6 +1,9 @@
 import discord
 from discord.ext import commands
 import os
+#start
+from discord.utils import get
+#end
 
 client = commands.Bot(command_prefix=".")
 
@@ -27,9 +30,9 @@ async def on_message(message):
 
 @client.event
 async def on_voice_state_update(member, before, after):
-    role = discord.utils.get(discord.guild, name='Muted')
-    user = client.get_user(353870423206920193)
-    await user.remove_roles(role)
+    role_id = 754566816612876349
+    role = get(member.guild.roles, id=role_id)
+    await member.remove_roles(role)
 
 
 @client.command()
