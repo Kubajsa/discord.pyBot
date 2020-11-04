@@ -44,7 +44,6 @@ async def commands(ctx):
     embed.add_field(name=".hello", value="Says hello to you", inline=False)
     embed.add_field(name=".ping", value="Checks the bot's ping", inline=False)
     embed.add_field(name=".whois @Kubajsa", value="Shows you some info about the user you mention", inline=False)
-    embed.add_field(name=".trade kit_you_want kit_you_have", value="Makes a trade message", inline=False)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
     await ctx.send(embed=embed)
 
@@ -83,15 +82,6 @@ async def hello(ctx):
 @client.command()
 async def ping(ctx):
     await ctx.channel.send(f'Pong! {round(client.latency * 1000)}ms')
-
-
-@client.command()
-async def trade(ctx, kitwant, kithave):
-    await ctx.channel.purge(limit=1)
-    embed = discord.Embed(title="New trade!", description=f"Trade by: {ctx.author.mention}", color=discord.Color.orange())
-    embed.set_thumbnail(url=ctx.author.avatar_url)
-    embed.add_field(name="Trade:", value=f"{ctx.author.mention} wants {kitwant} for {kithave}")
-    await ctx.send(embed=embed)
 
 
 client.run(os.environ['token'])
