@@ -1,9 +1,6 @@
 import discord
 from discord.ext import commands
 import os
-#start
-from discord.utils import get
-#end
 
 client = commands.Bot(command_prefix=".")
 
@@ -26,13 +23,6 @@ async def on_message(message):
     elif str(message.channel.id) == "771091645949149253" and not message.attachments:
         await message.channel.purge(limit=1)
     await client.process_commands(message)
-
-
-@client.event
-async def on_voice_state_update(member, before, after):
-    role_id = 754566816612876349
-    role = get(member.guild.roles, id=role_id)
-    await member.remove_roles(role)
 
 
 @client.command()
