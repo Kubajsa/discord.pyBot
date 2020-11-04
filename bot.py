@@ -25,6 +25,13 @@ async def on_message(message):
     await client.process_commands(message)
 
 
+@client.event
+async def on_voice_state_update(member, before, after):
+    role = discord.utils.get(discord.guild, name='Muted')
+    user = client.get_user(353870423206920193)
+    await user.remove_roles(role)
+
+
 @client.command()
 async def about(ctx):
     embed = discord.Embed(title="Kubajsa's Bot", description="Here is some info about this bot:", color=discord.Color.dark_green())
