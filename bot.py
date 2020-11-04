@@ -43,7 +43,7 @@ async def commands(ctx):
     embed.add_field(name=".commands", value="Shows this message", inline=False)
     embed.add_field(name=".hello", value="Says hello to you", inline=False)
     embed.add_field(name=".ping", value="Checks the bot's ping", inline=False)
-    embed.add_field(name=".whois @Kubajsa", value="Shows you some info about the user you mention", inline=False)
+    embed.add_field(name="Alias: .user\n.whois @Kubajsa", value="Shows you some info about the user you mention", inline=False)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
     await ctx.send(embed=embed)
 
