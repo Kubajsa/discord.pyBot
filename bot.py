@@ -61,6 +61,14 @@ async def whois(ctx, member : discord.Member):
 
 
 @client.command()
+async def avatar(ctx, member : discord.Member):
+    embed = discord.Embed(title=f"{member.display_name}'s Avatar", color=discord.Color.blue())
+    embed.set_image(url=member.avatar_url)
+    embed.set_footer(icon_url=ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
+    await ctx.send(embed=embed)
+
+
+@client.command()
 async def server(ctx):
     embed = discord.Embed(title="Server Information", color=discord.Color.blue())
     embed.set_thumbnail(url=ctx.guild.icon_url)
