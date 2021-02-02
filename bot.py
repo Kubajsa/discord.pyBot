@@ -44,6 +44,7 @@ async def commands(ctx):
     embed.add_field(name=".ping", value="Checks the bot's ping", inline=False)
     embed.add_field(name=".whois @Kubajsa", value="Alias: .user\nShows you some info about the user you mention", inline=False)
     embed.add_field(name=".avatar @Kubajsa", value="Shows you the avatar of the person you mention", inline=False)
+    embed.add_field(name=".server", value="Shows you info about the server", inline=False)
     embed.set_footer(icon_url= ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
     await ctx.send(embed=embed)
 
@@ -79,6 +80,7 @@ async def server(ctx):
     embed.add_field(name="🧑‍🤝‍🧑Members:", value=str(ctx.guild.member_count), inline=False)
     embed.add_field(name="💬Channels:", value=str(len(ctx.guild.channels)), inline=False)
     embed.add_field(name="🔊Voice Channels:", value=str(len(ctx.guild.voice_channels)), inline=False)
+    embed.set_footer(icon_url=ctx.author.avatar_url, text=f"Requested by {ctx.author.name}")
     await ctx.send(embed=embed)
 
 
